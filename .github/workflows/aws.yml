@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+name: flask web app
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: debian-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: 22
+        script: /home/admin/Minimal-flask/deploy_prod.sh

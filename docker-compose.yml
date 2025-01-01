@@ -9,7 +9,6 @@ services:
       - "5000:5000"
     networks:
       - db_network
-      - web_network
 
 networks:
   db_network:
