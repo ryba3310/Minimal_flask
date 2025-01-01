@@ -3,7 +3,7 @@
 This project is just a mininmal flask application created for integration with AWS CI/CD pipeline.
 Source code is bootstraped from Flask Pixel UI Kit.
 
-Available through easy_envoy at justalab.com
+Available through easy_envoy at site.justalab.com
 
 
 
