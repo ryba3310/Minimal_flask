@@ -13,7 +13,7 @@ Available through easy_envoy at justalab.com
 
 - ❌  Use AWS code repository(GitHub is more widely used)
 
-- ⚠️   Deploy with just basic functionality for CI/CD with AWS
+- ✅   Deploy with just basic functionality for CI/CD with AWS
 
 - ⚠️   Add unit tests
 
