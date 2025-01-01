@@ -8,8 +8,9 @@ name: flask web app
 
 jobs:
   deploy:
-    name: Deploy
-    runs-on: debian-latest
+    name: Deploy flask_app
+    runs-on: ubuntu-latest
+    environment: HOST
 
     steps:
     - name: Checkout
