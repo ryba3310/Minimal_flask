@@ -7,13 +7,27 @@ from apps.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
+from prometheus_client import make_wsgi_app, Counter, Histogram, Summary, generate_latest
+import random, time
 
+DURATION = Summary('flask_index_response_time', 'Time spent on index response', ['method', 'endpoint', 'http_status'])
+REQUESTS = Counter('flask_request_count', 'Number of requests to index', ['method', 'endpoint', 'http_status'])
+PROCESSING = Histogram('flask_request_proccessing_time', 'Time spent processing request data', ['method', 'endpoint'])
 
+@DURATION.time()
 @blueprint.route('/')
 def index():
+    start_time = time.time()
+    REQUESTS.labels('GET', '/', '200').inc()
+    # Some mocking sleep time for proccesing latency generation
+    time.sleep(random.uniform(0.1, 1.0))
+    PROCESSING.labels('GET', '/').observe(time.time() - start_time)
 
     return render_template('home/index.html', segment='index')
 
+@blueprint.route('/metrics')
+def metrics():
+    return generate_latest()
 
 # @blueprint.route('/<template>')
 # def route_template(template):

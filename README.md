@@ -17,4 +17,6 @@ Available through easy_envoy at site.justalab.com
 
 - ⚠️   Add unit tests
 
+- ⚠️   Add Prometheus metrics endpoint
 
+- ⚠️   Try AWS stack too, which seems more security wise
