@@ -25,9 +25,9 @@ def index():
 
     return render_template('home/index.html', segment='index')
 
-@blueprint.route('/metrics')
-def metrics():
-    return generate_latest()
+# @blueprint.route('/metrics')
+# def metrics():
+#     return generate_latest()
 
 # @blueprint.route('/<template>')
 # def route_template(template):
