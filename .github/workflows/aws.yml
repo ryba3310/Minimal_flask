@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
-      array:
+      matrix:
         python-version: [3.11.11, 3.10.15, 3.12.8]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python ${{ array.python-version }}
+    - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
-        python-version: ${{ array.python-version }}
+        python-version: ${{ matrix.python-version }}
 
     - name: Install Dependencies
       run: |
