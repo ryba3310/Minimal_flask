@@ -36,4 +36,4 @@ echo "Deployment complete ..."
 
 - ✅ Add Prometheus metrics endpoint
 
-- ⚠️  Try AWS stack too, which seems more security wise
+- ❌  Try AWS stack too, which seems more security wise(AWS CodeCommit is no longer available)
