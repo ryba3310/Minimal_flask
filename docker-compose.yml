@@ -1,15 +1,15 @@
 version: '3.8'
 services:
   appseed-app:
-    container_name: flask_app
+    container_name: flask_site
     restart: always
     env_file: .env
     build: .
     ports:
       - "5000:5000"
     networks:
-      - db_network
+      - flask_site
 
 networks:
-  db_network:
+  flask_site:
     driver: bridge

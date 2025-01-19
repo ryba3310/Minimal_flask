@@ -1,0 +1,196 @@
+<!--
+
+=========================================================
+* Pixel Free Bootstrap 5 UI Kit
+=========================================================
+
+* Product Page: https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Contact us if you want to remove it.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Primary Meta Tags -->
+<title>
+    Search for movies
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Pixel - Free Bootstrap 5 UI Kit">
+<meta name="author" content="Themesberg">
+<meta name="description" content="Open source and free Bootstrap 5 UI Kit featuring 80 UI components, 5 example pages, and a Gulp and Sass workflow.">
+<link rel="canonical" href="https://appseed.us/apps/flask-apps/flask-pixel-bootstrap-uikit">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demo.themesberg.com/pixel-bootstrap-5-ui-kit">
+<meta property="og:title" content="Pixel - Free Bootstrap 5 UI Kit">
+<meta property="og:description" content="Open source and free Bootstrap 5 UI Kit featuring 80 UI components, 5 example pages, and a Gulp and Sass workflow.">
+<meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/pixel-lite/pixel-lite-preview.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://demo.themesberg.com/pixel-bootstrap-5-ui-kit">
+<meta property="twitter:title" content="Pixel - Free Bootstrap 5 UI Kit">
+<meta property="twitter:description" content="Open source and free Bootstrap 5 UI Kit featuring 80 UI components, 5 example pages, and a Gulp and Sass workflow.">
+<meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/pixel-lite/pixel-lite-preview.jpg">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="/static/assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Pixel CSS -->
+<link type="text/css" href="/static/assets/css/pixel.css" rel="stylesheet">
+
+</head>
+<body>
+
+    {% include 'includes/navigation.html' %}
+
+    <main>
+
+        {% include 'includes/preloader.html' %}
+
+                <!-- Hero -->
+        <section class="section-header overflow-hidden pt-7 pt-lg-3 pb-9 pb-lg-6 bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="section-header bg-primary-app pb-0">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <div class="mb-3">
+                            <label for="exampleInputIconRight">Search for a movie</label>
+                            <form id="search" name="searchForm" method="get" action="/search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="query" id="searchInput" placeholder="Search"
+                                        aria-label="Search" aria-describedby="basic-addon2">
+                                    <button class="btn mb-0 mr-8 btn-primary" ><span class="input-group-text" id="basic-addon2"><span class="fas fa-search"></span></span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Hero section -->
+
+        {% if pagination %}
+        <div class="section section-md">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                        <div class="card shadow">
+                            <img src="/static/assets/img/blog/image-1.jpg" class="card-img-top rounded-top"
+                                alt="Themesberg office">
+                            <div class="card-body">
+                                <span class="h6 icon-tertiary small"><span class="fas fa-medal me-2"></span>Awards</span>
+                                <h3 class="h5 card-title mt-3">We partnered up with Google</h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Next elemtn-->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-7 mb-lg-0">
+                        <div class="card shadow">
+                            <img src="/static/assets/img/blog/image-1.jpg" class="card-img-top rounded-top"
+                                alt="Themesberg office">
+                            <div class="card-body">
+                                <span class="h6 icon-tertiary small"><span class="fas fa-medal me-2"></span>Awards</span>
+                                <h3 class="h5 card-title mt-3">We partnered up with Google</h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="section section-md">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <nav aria-label="Templates page navigation">
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" aria-label="first link" tabindex="-1" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">5</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" aria-label="first link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+
+      <section class="section section-lg bg-primary-app pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-left text-md-right">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <p><br></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endif %}
+        <!-- End of Hero section -->
+
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    {% include 'includes/scripts.html' %}
+
+</body>
+</html>

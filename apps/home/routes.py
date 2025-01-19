@@ -8,8 +8,9 @@ from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 from prometheus_client import make_wsgi_app, Counter, Histogram, Summary, generate_latest
-import random, time
+import random, time, requests, os
 
+LAMBDA_ENDPOINT = os.environ['LAMBDA_VPCE']
 DURATION = Summary('flask_index_response_time', 'Time spent on index response', ['method', 'endpoint', 'http_status'])
 REQUESTS = Counter('flask_request_count', 'Number of requests to index', ['method', 'endpoint', 'http_status'])
 PROCESSING = Histogram('flask_request_proccessing_time', 'Time spent processing request data', ['method', 'endpoint'])
@@ -25,6 +26,14 @@ def index():
 
     return render_template('home/index.html', segment='index')
 
+@blueprint.route('/search', methods=['GET'])
+def search():
+    if request.query_string:
+        query = request.args['query']
+        movies = requests.get(f'{LAMBDA_ENDPOINT}?query={query}')
+        return render_template('home/search.html', pagination=movies)
+
+    return render_template('home/search.html', )
 # @blueprint.route('/metrics')
 # def metrics():
 #     return generate_latest()

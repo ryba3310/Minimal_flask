@@ -14,6 +14,7 @@ python-dotenv==1.0.1
 Flask-Minify==0.48
 prometheus_client==0.21.1
 pytest==8.3.4
+requests==2.32.3
 
 # flask_mysqldb
 # psycopg2-binary
