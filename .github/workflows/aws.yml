@@ -9,7 +9,7 @@ name: flask web app
 jobs:
   build:
     env:
-      - LAMBDA_VPCE: "https://x05n5zw6a2.execute-api.eu-north-1.amazonaws.com/dev/"
+      LAMBDA_VPCE: "https://x05n5zw6a2.execute-api.eu-north-1.amazonaws.com/dev/"
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
