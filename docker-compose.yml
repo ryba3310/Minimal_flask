@@ -4,6 +4,9 @@ services:
     container_name: flask_site
     restart: always
     env_file: .env
+    mem_limit: 20m
+    memswap_limit: 300m
+    mem_swappiness: 80
     build: .
     ports:
       - "5000:5000"
