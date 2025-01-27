@@ -101,65 +101,32 @@
         </div>
         <!-- End of Hero section -->
 
-        {% if pagination %}
+	{% if pagination %}
         <div class="section section-md">
             <div class="container">
                 <div class="row mb-5">
+                    {% for movie in movies %}
                     <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
                         <div class="card shadow">
                             <img src="/static/assets/img/blog/image-1.jpg" class="card-img-top rounded-top"
                                 alt="Themesberg office">
                             <div class="card-body">
-                                <span class="h6 icon-tertiary small"><span class="fas fa-medal me-2"></span>Awards</span>
-                                <h3 class="h5 card-title mt-3">We partnered up with Google</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.</p>
-                                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                                <span class="h6 icon-tertiary small"><span class="fas fa-medal me-2"></span>{{ movie['vote_avg'] }}</span>
+                                <h3 class="h5 card-title mt-3">{{ movie['name'] }}</h3>
+                                <p class="card-text">{{ movie['overview'] }}</p>
+                                <a href="{{ movie['tmdb_page'] }}" class="btn btn-primary btn-sm">More info</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Next elemtn-->
-                    <div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-7 mb-lg-0">
-                        <div class="card shadow">
-                            <img src="/static/assets/img/blog/image-1.jpg" class="card-img-top rounded-top"
-                                alt="Themesberg office">
-                            <div class="card-body">
-                                <span class="h6 icon-tertiary small"><span class="fas fa-medal me-2"></span>Awards</span>
-                                <h3 class="h5 card-title mt-3">We partnered up with Google</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.</p>
-                                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
+
             <div class="section section-md">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-4">
                             <nav aria-label="Templates page navigation">
                                 <ul class="pagination">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" aria-label="first link" tabindex="-1" href="#">Previous</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">5</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" aria-label="first link" href="#">Next</a>
-                                    </li>
+                                {{ pagination.links }}
                                 </ul>
                             </nav>
                         </div>
@@ -167,8 +134,9 @@
                 </div>
             </div>
         </div>
-        {% else %}
+	{% endif %}
 
+        <!--
       <section class="section section-lg bg-primary-app pb-0">
             <div class="container">
                 <div class="row">
@@ -182,8 +150,7 @@
                 </div>
             </div>
         </section>
-
-        {% endif %}
+        -->
         <!-- End of Hero section -->
 
     </main>

@@ -8,7 +8,8 @@ from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 from prometheus_client import make_wsgi_app, Counter, Histogram, Summary, generate_latest
-import random, time, requests, os
+import random, time, requests, os, json
+from flask_paginate import Pagination, get_page_parameter
 
 LAMBDA_ENDPOINT = os.environ['LAMBDA_VPCE']
 DURATION = Summary('flask_index_response_time', 'Time spent on index response', ['method', 'endpoint', 'http_status'])
@@ -31,7 +32,18 @@ def search():
     if request.query_string:
         query = request.args['query']
         movies = requests.get(f'{LAMBDA_ENDPOINT}?query={query}')
-        return render_template('home/search.html', pagination=movies)
+        movies = movies.json()
+        try:
+            page = int(request.args.get('page', 1))
+        except ValueError:
+            page = 1
+        per_page = 6
+        offset = (page - 1) * per_page
+        items = movies[offset:offset+per_page]
+        count = len(movies)
+        pagination = Pagination(page=page, total=count, per_page=per_page, record_name='Movies')
+        return render_template('home/search.html', pagination=pagination, movies=items)
+
 
     return render_template('home/search.html', )
 # @blueprint.route('/metrics')
