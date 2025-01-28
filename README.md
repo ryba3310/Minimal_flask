@@ -6,10 +6,10 @@ Source code is bootstraped from Flask Pixel UI Kit.
 Available through easy_envoy at site.justalab.com
 
 
-It requires setting secret values in GitHub's repository: 
-HOST - valid DNS hostname or ip address
-USERNAME - SSH username
-SSH_KEY - SSH private key
+It requires setting secret values in GitHub's repository:  
+HOST - valid DNS hostname or ip address  
+USERNAME - SSH username  
+SSH_KEY - SSH private key  
 
 Additionally might be added repository access key for managment
 In aws.yml file in github/workflows directory for github Actions there is being run a script at endpoint locally through ssh with contents:
