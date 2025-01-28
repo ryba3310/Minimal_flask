@@ -36,4 +36,6 @@ echo "Deployment complete ..."
 
 - ✅ Add Prometheus metrics endpoint
 
+- ✅ Integrate cloudy_movies project in
+
 - ❌  Try AWS stack too, which seems more security wise(AWS CodeCommit is no longer available)

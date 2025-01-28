@@ -40,6 +40,7 @@ def search():
         per_page = 6
         offset = (page - 1) * per_page
         items = movies[offset:offset+per_page]
+        print(items)
         count = len(movies)
         pagination = Pagination(page=page, total=count, per_page=per_page, record_name='Movies')
         return render_template('home/search.html', pagination=pagination, movies=items)
