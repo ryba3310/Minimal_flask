@@ -31,7 +31,7 @@ def index():
 def search():
     if request.query_string:
         query = request.args['query']
-        movies = requests.get(f'{LAMBDA_ENDPOINT}?query={query}')
+        movies = requests.get(f'{LAMBDA_ENDPOINT}?query={query}', timeout=60)
         movies = movies.json()
         try:
             page = int(request.args.get('page', 1))
